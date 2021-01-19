@@ -38,11 +38,3 @@ class PurchaseOrder(models.Model):
                 self.comment_template1_id = comment_template
             elif comment_template.position == "after_lines":
                 self.comment_template2_id = comment_template
-
-
-class PurchaseOrderLine(models.Model):
-    """Add text comment"""
-
-    _inherit = "purchase.order.line"
-
-    formatted_note = fields.Html("Formatted Note")

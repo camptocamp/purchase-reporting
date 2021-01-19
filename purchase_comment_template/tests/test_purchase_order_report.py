@@ -34,10 +34,10 @@ class TestPurchaseOrderReport(TransactionCase):
         res = (
             self.env["ir.actions.report"]
             ._get_report_from_name("purchase.report_purchaseorder")
-            .render_qweb_html(self.purchase_order.ids)
+            ._render_qweb_html(self.purchase_order.ids)
         )
-        self.assertRegexpMatches(str(res[0]), self.before_comment.text)
-        self.assertRegexpMatches(str(res[0]), self.after_comment.text)
+        self.assertRegex(str(res[0]), self.before_comment.text)
+        self.assertRegex(str(res[0]), self.after_comment.text)
 
     def test_onchange_partner_id(self):
         self.partner_id.property_comment_template_id = self.after_comment.id
