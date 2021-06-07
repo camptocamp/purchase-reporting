@@ -11,7 +11,7 @@
     "license": "AGPL-3",
     "depends": [
         "purchase",
-        "account_invoice_comment_template",
+        "account_comment_template",
     ],
     "data": [
         "security/ir.model.access.csv",
